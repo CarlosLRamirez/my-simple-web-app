@@ -94,8 +94,23 @@ Se deveria ver un mensaje de bienvenida de GitHub si tu configuración SSH es co
 ## 6. Flujo para actualizar y re-desplegar la aplicación web.
 
 Cuando hayamos echo un cambio en la aplicación web, ejemplo modificar el codigo html, debemos agregar los cambios, realizar un commit al repostiro y un push al repositirio remoto en Github
+
+Esto es en la PC local, o donde estemos trabajando el desarrollo de la aplicación
+
 ```shell
+cd  ~/projects/my-web-app
 git add .
 git commit -m "Update web app"
 git push origin main
 ```
+
+En el servidor NGINX ahora debemos hacer un pull del repositiro para actualizar el código de la aplicación web
+```shell
+cd /var/www/my-webapp
+git pull origin main
+```
+Reiniciar el servidor NGINX si es necesario
+```shell
+sudo systemctl restart nginx
+```
+
