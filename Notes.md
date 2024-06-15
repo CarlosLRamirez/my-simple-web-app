@@ -112,3 +112,7 @@ Reiniciar el servidor NGINX si es necesario:
 sudo systemctl restart nginx
 ```
 
+
+
+scp -i /var/lib/jenkins/.ssh/id_rsa -o StrictHostKeyChecking=no -r * ubuntu@18.212.87.151:/var/www/my-webapp/
+
